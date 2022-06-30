@@ -1,18 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
+  color: green;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   min-height: 100vh;
-  background-color: dodgerblue;
+  /* background-color: dodgerblue; */
+  background-color: green;
 }
 
-.App {
+/* .App {
   text-align: center;
+} */
+
+#text {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+#new-quote {
+  background-color: green;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 2px;
+  color: white;
+}
+
+#tweet-quote {
+  font-size: 2rem;
+}
+
+.bigquote {
+  font-size: 50px;
+  margin: 0;
 }
 
 .quote-box {

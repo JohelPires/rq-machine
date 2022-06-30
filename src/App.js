@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
+
 import './App.css'
 
 function App() {
@@ -33,14 +35,22 @@ function App() {
   return (
     <div className='App'>
       <div className='quote-box' id='quote-box'>
-        <h1 id='text'>{quote.content}</h1>
+        {/* <h1 className='bigquote'>"</h1> */}
+        <h1 id='text'>"{quote.content}"</h1>
         <h3 id='author'>{quote.author}</h3>
-        <button id='new-quote' onClick={getQuote}>
-          New quote
-        </button>
-        <a id='tweet-quote' href=''>
-          Tweet Quote
-        </a>
+        <div className='controls'>
+          {' '}
+          <button id='new-quote' onClick={getQuote}>
+            New quote
+          </button>
+          <a
+            title='Tweet this quote'
+            id='tweet-quote'
+            href='https://twitter.com/intent/tweet'
+          >
+            <i className='fa-brands fa-twitter-square'></i>
+          </a>
+        </div>
       </div>
       <footer>Copyright 2022</footer>
     </div>
