@@ -29,7 +29,7 @@ function App() {
     'teal',
   ]
 
-  const api_url = 'http://api.quotable.io/random'
+  const api_url = 'https://api.quotable.io/random'
 
   // useEffect(() => {
   //   async function getapi(url) {
