@@ -3,17 +3,18 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  color: green;
   font-family: 'Poppins', sans-serif;
 }
 
 body {
+  color: green;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   /* background-color: dodgerblue; */
   background-color: green;
+  transition: background-color 1s, color 1s;
 }
 
 /* .App {
@@ -21,15 +22,22 @@ body {
 } */
 
 #text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 200;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
+#author {
+  font-size: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
 .controls {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #new-quote {
@@ -38,10 +46,13 @@ body {
   padding: 5px 10px;
   border-radius: 2px;
   color: white;
+  transition: background-color 1s;
 }
 
 #tweet-quote {
   font-size: 2rem;
+  color: green;
+  transition: color 1s;
 }
 
 .bigquote {
@@ -52,7 +63,7 @@ body {
 .quote-box {
   border-radius: 10px;
   background-color: white;
-  color: black;
+  /* color: black; */
   max-width: 500px;
   padding: 20px 40px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);

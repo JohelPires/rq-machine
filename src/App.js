@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 
 import './App.css'
 
@@ -8,6 +8,26 @@ function App() {
 
   const [quote, setQuote] = useState({})
   const [callGetQuote, setCallGetQuote] = useState(false)
+  const [theColor, setTheColor] = useState('orangered')
+  const colors = [
+    'blueviolet',
+    'brown',
+    'cadetblue',
+    'dodgerblue',
+    'chocolate',
+    'coral',
+    'darkcyan',
+    'cornflowerblue',
+    'darkorange',
+    'darkslateblue',
+    'darkslategray',
+    'forestgreen',
+    'firebrick',
+    'olive',
+    'rebeccapurble',
+    'slateblue',
+    'teal',
+  ]
 
   const api_url = 'http://api.quotable.io/random'
 
@@ -22,6 +42,8 @@ function App() {
 
   function getQuote() {
     setCallGetQuote((prev) => !prev)
+    const randomNum = Math.floor(Math.random() * colors.length)
+    setTheColor(colors[randomNum])
   }
 
   useEffect(() => {
@@ -34,22 +56,26 @@ function App() {
 
   return (
     <div className='App'>
+      <Helmet>
+        <style>{`body { background-color: ${theColor}; color: ${theColor}} #tweet-quote { color: ${theColor};} #new-quote { background-color: ${theColor}}`}</style>
+      </Helmet>
       <div className='quote-box' id='quote-box'>
         {/* <h1 className='bigquote'>"</h1> */}
-        <h1 id='text'>"{quote.content}"</h1>
+        <h1 id='text'>
+          <em>"{quote.content}"</em>
+        </h1>
         <h3 id='author'>{quote.author}</h3>
         <div className='controls'>
-          {' '}
-          <button id='new-quote' onClick={getQuote}>
-            New quote
-          </button>
           <a
             title='Tweet this quote'
             id='tweet-quote'
             href='https://twitter.com/intent/tweet'
           >
-            <i className='fa-brands fa-twitter-square'></i>
+            <i className='fa-brands fa-twitter'></i>
           </a>
+          <button id='new-quote' onClick={getQuote}>
+            New quote
+          </button>
         </div>
       </div>
       <footer>Copyright 2022</footer>
